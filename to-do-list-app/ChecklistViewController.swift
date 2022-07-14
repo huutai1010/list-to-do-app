@@ -27,10 +27,9 @@ class ChecklistViewController: UITableViewController {
 
   // MARK: - Table view data source
 
-  //    override func numberOfSections(in tableView: UITableView) -> Int {
-  //        // #warning Incomplete implementation, return the number of sections
-  //        return 0
-  //    }
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
@@ -45,14 +44,18 @@ class ChecklistViewController: UITableViewController {
     return cell
   }
 
+  
   // MARK: - Table View Delegate
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    if let cell = self.tableView.cellForRow(at: indexPath) {
-//
-//    }
-    let itemDetailVC = ItemDetailViewController()
-    itemDetailVC.navigationItem.title = "ItemDetailViewController"
-    self.navigationController?.pushViewController(itemDetailVC, animated: true)
+    let item = items[indexPath.row]
+    if let cell = self.tableView.cellForRow(at: indexPath) {
+      let checkMarkLabel = cell.viewWithTag(1001) as! UILabel
+      if checkMarkLabel.text == "√" {
+        checkMarkLabel.text = "√"
+      } else {
+        checkMarkLabel.text = ""
+      }
+    }
     self.tableView.deselectRow(at: indexPath, animated: true)
   }
 
@@ -102,4 +105,8 @@ class ChecklistViewController: UITableViewController {
    }
    */
 
+  // MARL: Configure check
+  //  func toggleCheckmark() {
+  //    self.tableView.cellForRow(at: <#T##IndexPath#>)
+  //  }
 }
