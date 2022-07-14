@@ -226,6 +226,11 @@ FuKImg
             <point key="canvasLocation" x="-245" y="158"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="CbQ-RH-yOG">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="ZUH-Xr-2xr"/>
     </inferredMetricsTieBreakers>
